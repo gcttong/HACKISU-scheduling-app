@@ -1,0 +1,19 @@
+<h1>Add new Sporting Event</h1>
+
+<%= form_tag :action => 'create' do %>
+<p><label for = "book_title">Name of the event</label>:
+
+<%= text_field 'books', 'title' %></p>
+<p><label for = "book_price">Date</label>:
+
+<%= text_field 'books', 'price' %></p>
+<p><label for = "book_subject_id">Day of the week</label>:
+
+<%= collection_select(:books, :subject_id, @subjects, :id, :name, prompt: true) %></p>
+<p><label for = "book_description">Description</label><br/>
+
+<%= text_area 'books', 'description' %></p>
+<%= submit_tag "Create" %>
+
+<% end -%>
+<%= link_to 'Back', {:action => 'list'} %>
